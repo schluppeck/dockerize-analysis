@@ -25,7 +25,7 @@ This will pop you into a running container with everything installed. Check with
 docker run -it --rm -p8888:8888 docker.pkg.github.com/schluppeck/dockerize-analysis/nipype_test:1.0
 ```
 
-Under `macos` this looks as follows (under Windows with Docker Desktop installed you should be something very similar)
+Under `macos` this looks as follows (under Windows with Docker Desktop installed you should be something very similar). Copy and paste the link you see in the terminal into your browser and start using the `jupyter` notebook.
 
 ![starting container](docker-run.png)
 
@@ -33,12 +33,11 @@ Interact with the `jupyter` notebook in the way you have come to apreciate and :
 
 ![connecting to notebook server](notebook-running.png)
 
-
+## Note on download / pulling the image
 
 The first time you run this, docker needs to download the image (~4gb), so have some patience... but after this you should be able to start up the container very quickly.
 
 Alternatively, you can docker pull the image first as per instructions under the packages tab and the `docker run` your downloaded version.
-
 
 
 ## How to access data in there?
