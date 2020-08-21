@@ -2,6 +2,24 @@
 
 setting up for reproducible code for running data analysis workflows at UNUK
 
+The idea for this test is to have a near complete install of `nipype` (sans matlab) as a docker image. this includes all the python dependencies, `fsl` (veraion 5.0 for now) and various other tools.
+
+By installig docker desktop (https://www.docker.com/products/docker-desktop) on your local machine (Windows/Mac), you can run the container which is actually built on Linux. This will remove a lot of the Windows-to-Mac headaches that we have been having - at the cost of this small extra step, which is hopefully not too burdensome.
+
+## Running from terminal
+
+For testing and/or if all you need is `vim`, `emacs`, etc and the command line, you can also use `bash` as your endpoint like this
+
+```bash
+# to run this with shell
+docker run -it --rm docker.pkg.github.com/schluppeck/dockerize-analysis/nipype_test:1.0 bash
+```
+
+This will pop you into a running container with everything installed. Check with `hostname`, `uname -a`, etc and snoop around.
+
+
+## Running the notebook server
+
 ```bash
 # to run this with a notebook server
 docker run -it --rm -p8888:8888 docker.pkg.github.com/schluppeck/dockerize-analysis/nipype_test:1.0
@@ -21,14 +39,7 @@ The first time you run this, docker needs to download the image (~4gb), so have 
 
 Alternatively, you can docker pull the image first as per instructions under the packages tab and the `docker run` your downloaded version.
 
-## Running from terminal
 
-If all you need is `vim`, `emacs`, etc and the command line, you can also use `bash` as your endpoint like this
-
-```bash
-# to run this with shell
-docker run -it --rm docker.pkg.github.com/schluppeck/dockerize-analysis/nipype_test:1.0 bash
-```
 
 ## How to access data in there?
 
