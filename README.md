@@ -2,7 +2,7 @@
 
 setting up for reproducible code for running data analysis workflows at UNUK
 
-The idea for this test is to have a near complete install of `nipype` (sans matlab) as a docker image. this includes all the python dependencies, `fsl` (veraion 5.0 for now) and various other tools.
+The idea for this test is to have a near complete install of `nipype` (sans matlab) as a docker image. this includes all the python dependencies, `fsl` (version 5.0 for now) and various other tools.
 
 By installig docker desktop (https://www.docker.com/products/docker-desktop) on your local machine (Windows/Mac), you can run the container which is actually built on Linux. This will remove a lot of the Windows-to-Mac headaches that we have been having - at the cost of this small extra step, which is hopefully not too burdensome.
 
