@@ -12,11 +12,30 @@ For testing and/or if all you need is `vim`, `emacs`, etc and the command line, 
 
 ```bash
 # to run this with shell
-docker run -it --rm docker.pkg.github.com/schluppeck/dockerize-analysis/nipype_test:1.0 bash
+docker run -it --rm \
+  docker.pkg.github.com/schluppeck/dockerize-analysis/nipype_fsl:1.0 bash
 ```
 
 This will pop you into a running container with everything installed. Check with `hostname`, `uname -a`, etc and snoop around.
 
+
+## Running also with fslview
+
+- make sure you have `Xquartz` (macos) or `Xming` (windows) running to display X11 windows / GUIs
+
+- start the container, making sure you have a folder called `testdata` present in your current working directory (`pwd`) - this is the folder shared with your container (at `/home/data`)
+
+```bash
+docker run  --rm -it \
+  --mount type=bind,source="$(pwd)"/testdata,target=/home/data \
+  -e DISPLAY=host.docker.internal:0 \
+  docker.pkg.github.com/schluppeck/dockerize-analysis/nipype_fsl:1.0 \
+  bash
+```
+
+- try out a programme that requires `X11`, like `fsl &` or `fslview &`
+
+- `python3` should also work. Share some python code in your mounted drive and run to test!
 
 ## Running the notebook server
 
@@ -40,7 +59,7 @@ The first time you run this, docker needs to download the image (~4gb), so have 
 Alternatively, you can docker pull the image first as per instructions under the packages tab and the `docker run` your downloaded version.
 
 
-## How to access data in there?
+## Details on how to access data in there?
 
 Example use case:
 
@@ -88,3 +107,10 @@ mcflirt -in dafni_01_FSL_4_1.nii -plots
 ```
 
 5. when you exit container, files will persist (look in `~/demo/testdata`)
+
+
+## Notes
+
+To see what was done to create the docker image for here, have a look at the [Readme file](building/Readme.md) and generated `Dockerfile` in the "building" directory
+
+
