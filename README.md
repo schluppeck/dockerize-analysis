@@ -1,6 +1,9 @@
 # dockerize-analysis
 
-setting up for reproducible code for running data analysis workflows at UNUK
+Setting up for reproducible code for running data analysis workflows at UNUK
+
+:video: I have also made a **small youtube playlist** with [videos introducing the ideas](https://www.youtube.com/playlist?list=PLCZfmSQp7dzKdvEf5TP4erdlDZPkqFl20) available. They might give some useful context to what's here.
+
 
 The idea for this test is to have a near complete install of `nipype` (sans matlab) as a docker image. this includes all the python dependencies, `fsl` (version 5.0 for now) and various other tools.
 
