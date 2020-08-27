@@ -9,6 +9,23 @@ The idea for this test is to have a near complete install of `nipype` (sans matl
 
 By installig docker desktop (https://www.docker.com/products/docker-desktop) on your local machine (Windows/Mac), you can run the container which is actually built on Linux. This will remove a lot of the Windows-to-Mac headaches that we have been having - at the cost of this small extra step, which is hopefully not too burdensome.
 
+## TL;DR
+
+If you think you have everything installed and just need a reminder of what the command line options for running the container are:
+
+```bash 
+# now run container with shell
+docker run -it \
+  --name devtest \
+  --mount type=bind,source="$(pwd)"/testdata,target=/home/data \
+  --rm \
+  docker.pkg.github.com/schluppeck/dockerize-analysis/nipype_test:1.0 \
+  bash
+```
+
+If this looks confusing, then have a look at the following description, which takes you through to this point step by step.
+
+
 ## Running from terminal
 
 For testing and/or if all you need is `vim`, `emacs`, etc and the command line, you can also use `bash` as your endpoint like this
