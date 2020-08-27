@@ -15,10 +15,9 @@ If you think you have everything installed and just need a reminder of what the 
 
 ```bash 
 # now run container with shell
-docker run -it \
-  --name devtest \
+docker run --rm -it \
+  --name fsl_dev \
   --mount type=bind,source="$(pwd)"/testdata,target=/home/data \
-  --rm \
   docker.pkg.github.com/schluppeck/dockerize-analysis/nipype_test:1.0 \
   bash
 ```
