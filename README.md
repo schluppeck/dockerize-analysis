@@ -14,6 +14,9 @@ By installig docker desktop (https://www.docker.com/products/docker-desktop) on 
 If you think you have everything installed and just need a reminder of what the command line options for running the container are:
 
 ```bash 
+# go to home directory and make "testdata if it doesn not exist
+cd ~ && mkdir -p testdata
+
 # now run container with shell
 docker run --rm -it \
   --name fsl_dev \
