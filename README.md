@@ -48,9 +48,7 @@ This will pop you into a running container with everything installed. Check with
 
 - make sure you have `Xquartz` (macos) or `Xming` (windows) running to display X11 windows / GUIs
 
-- make sure that X windows are allowed to be launched by using `xhost + 127.0.0.1` as per
-
-<script src="https://gist.github.com/mreichelt/de62cc78e3d12993dc60140b2a43cee7.js"></script>
+- make sure that X windows are allowed to be launched by using `xhost + 127.0.0.1` as per this [blog post](https://medium.com/@mreichelt/how-to-show-x11-windows-within-docker-on-mac-50759f4b65cb) - [gist](https://gist.github.com/mreichelt/de62cc78e3d12993dc60140b2a43cee7)
 
 - start the container, making sure you have a folder called `testdata` present in your current working directory (`pwd`) - this is the folder shared with your container (at `/home/data`)
 
