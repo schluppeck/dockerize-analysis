@@ -17,6 +17,9 @@ If you think you have everything installed and just need a reminder of what the 
 # go to home directory and make "testdata if it doesn not exist
 cd ~ && mkdir -p testdata
 
+# allow x windows to localhost
+xhost + 127.0.0.1
+
 # now run container with shell
 docker run --rm -it \
   --name fsl_dev \
@@ -44,6 +47,10 @@ This will pop you into a running container with everything installed. Check with
 ## Running also with fslview
 
 - make sure you have `Xquartz` (macos) or `Xming` (windows) running to display X11 windows / GUIs
+
+- make sure that X windows are allowed to be launched by using `xhost + 127.0.0.1` as per
+
+<script src="https://gist.github.com/mreichelt/de62cc78e3d12993dc60140b2a43cee7.js"></script>
 
 - start the container, making sure you have a folder called `testdata` present in your current working directory (`pwd`) - this is the folder shared with your container (at `/home/data`)
 
