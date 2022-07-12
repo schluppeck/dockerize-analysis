@@ -21,7 +21,7 @@ neurdflib==5.0.1
 nibabel==2.5.1
 nilearn==0.6.1
 nipype==1.4.2
-numpy==1.17.4
+numpy==1.22.0
 packaging==20.3
 palettable==3.3.0
 pandas==0.25.3
